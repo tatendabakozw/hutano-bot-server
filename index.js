@@ -28,6 +28,7 @@ app.get("/", async (req, res) => {
 
 app.use("/auth", require("./routes/auth/login"));
 app.use("/auth", require("./routes/auth/register"));
+app.use("/message", require("./routes/message"));
 
 //not found handler
 app.use((req, res, next) => {

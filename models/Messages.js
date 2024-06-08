@@ -17,6 +17,7 @@ const messageSchema = new mongoose.Schema(
     user_id: {
       type: String,
     },
+    sentBy: { type: String, default: "" },
   },
   {
     timestamps: true,
