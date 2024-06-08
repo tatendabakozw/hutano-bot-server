@@ -1,7 +1,25 @@
-const { createProduct } = require("../controllers/productController");
+const {
+  createProduct,
+  deleteItem,
+} = require("../controllers/productController");
 const Product = require("../models/Product");
 
 const router = require("express").Router();
+
+router.get("/delete", async (req, res, next) => {
+  try {
+    const { item } = req.query;
+    const deletedItem = await Product.findByIdAndDelete({ _id: item });
+    if (!deletedItem) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res
+      .status(200)
+      .json({ message: "Item deleted successfully", item: deletedItem });
+  } catch (error) {
+    next(error);
+  }
+});
 
 // create a product
 // post request

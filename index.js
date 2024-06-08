@@ -26,8 +26,8 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.use("/product", require("./routes/product"));
-app.use("/order", require("./routes/order"));
+app.use("/auth", require("./routes/auth/login"));
+app.use("/auth", require("./routes/auth/register"));
 
 //not found handler
 app.use((req, res, next) => {

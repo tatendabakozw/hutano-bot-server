@@ -1,5 +1,4 @@
 const Product = require("../models/Product");
-const router = require("express").Router();
 
 exports.createProduct = async (req, res, next) => {
   try {

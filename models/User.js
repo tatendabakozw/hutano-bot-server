@@ -2,27 +2,14 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    surname: {
-      type: String,
-      default: "",
+    chats: {
+      type: Array,
     },
-    national_id: {
-      type: String,
-      default: "",
-    },
-    nationality: {
-      type: String,
-    },
-    gender: {
-      type: String,
-    },
+
     password: {
       type: String,
     },
     email: {
-      type: String,
-    },
-    docs: {
       type: String,
     },
   },
